@@ -1,13 +1,11 @@
-# Azure 2030 Website - Complete File Structure
-
-## File 1: index.html
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azure 2030 - Future Ready Cloud</title>
+    <title>AGenius X - Future-Proof AI Solutions & Strategic Consulting</title>
+    <meta name="description" content="AGenius X delivers enterprise-grade AI solutions and strategic consulting. Led by experienced professionals, we help organizations transform through ethical AI implementation and data-driven innovation.">
+    <meta name="keywords" content="AI consulting, artificial intelligence, digital transformation, data governance, machine learning, business automation, European AI, enterprise AI solutions">
     <style>
         * {
             margin: 0;
@@ -16,10 +14,11 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0f1419 0%, #1a252f 50%, #0d1b2a 100%);
             color: #ffffff;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         .container {
@@ -33,10 +32,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(15, 20, 25, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
             transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         nav {
@@ -47,40 +47,43 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #0078d4, #00bcf2);
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #4facfe, #00f2fe, #0078d4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.02em;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
+            font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            padding: 0.5rem 0;
         }
 
         .nav-links a:hover {
-            color: #00bcf2;
-            transform: translateY(-2px);
+            color: #4facfe;
+            transform: translateY(-1px);
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(45deg, #0078d4, #00bcf2);
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
             transition: width 0.3s ease;
         }
 
@@ -90,70 +93,124 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
             overflow: hidden;
+            padding: 2rem 0;
         }
 
         .hero-content {
             z-index: 2;
+            max-width: 900px;
             animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(79, 172, 254, 0.1);
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            color: #4facfe;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         .hero h1 {
             font-size: 4rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffffff, #00bcf2, #0078d4);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #ffffff, #4facfe, #00f2fe);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: glow 2s ease-in-out infinite alternate;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
         }
 
-        .hero p {
-            font-size: 1.5rem;
+        .hero .subtitle {
+            font-size: 1.4rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            color: #94a3b8;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4facfe;
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
         }
 
         .cta-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             padding: 1rem 2rem;
-            background: linear-gradient(45deg, #0078d4, #00bcf2);
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
             color: white;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            border: 2px solid transparent;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 188, 242, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid #4facfe;
+            color: #4facfe;
         }
 
-        .cta-button:hover::before {
-            left: 100%;
+        .cta-secondary:hover {
+            background: rgba(79, 172, 254, 0.1);
         }
 
-        /* Floating particles */
+        /* Particles Background */
         .particles {
             position: absolute;
             top: 0;
@@ -165,115 +222,493 @@
 
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(0, 188, 242, 0.8);
+            width: 3px;
+            height: 3px;
+            background: rgba(79, 172, 254, 0.6);
             border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
+            animation: float 8s ease-in-out infinite;
         }
 
-        /* Features Section */
-        .features {
-            padding: 5rem 0;
-            background: rgba(0, 0, 0, 0.3);
+        /* About Section */
+        .about {
+            padding: 8rem 0;
+            background: rgba(0, 0, 0, 0.2);
         }
 
-        .features h2 {
+        .section-header {
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            color: #00bcf2;
+            margin-bottom: 4rem;
         }
 
-        .features-grid {
+        .section-badge {
+            display: inline-block;
+            background: rgba(79, 172, 254, 0.1);
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            color: #4facfe;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 4rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e2e8f0;
+        }
+
+        .about-text h3 {
+            color: #4facfe;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+            border-radius: 12px;
             padding: 2rem;
             text-align: center;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-item h4 {
+            color: #4facfe;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 188, 242, 0.2);
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(79, 172, 254, 0.3);
+            box-shadow: 0 20px 40px rgba(79, 172, 254, 0.1);
         }
 
-        .feature-card::before {
+        .service-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(45deg, #0078d4, #00bcf2);
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
         }
 
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1rem;
-            background: linear-gradient(45deg, #0078d4, #00bcf2);
-            border-radius: 50%;
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            animation: pulse 2s ease-in-out infinite;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
-        .feature-card h3 {
-            font-size: 1.5rem;
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #ffffff;
             margin-bottom: 1rem;
-            color: #00bcf2;
+            font-weight: 600;
         }
 
-        /* Stats Section */
-        .stats {
-            padding: 5rem 0;
+        .service-card p {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4facfe;
+            font-weight: bold;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 8rem 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            border-color: rgba(79, 172, 254, 0.3);
+            box-shadow: 0 20px 40px rgba(79, 172, 254, 0.1);
+        }
+
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .member-avatar::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(45deg, #4facfe, #00f2fe, #4facfe);
+            border-radius: 50%;
+            z-index: -1;
+            animation: rotate 3s linear infinite;
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .member-title {
+            color: #4facfe;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .member-company {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-bio {
+            color: #e2e8f0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-expertise {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .expertise-tag {
+            background: rgba(79, 172, 254, 0.1);
+            color: #4facfe;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .member-linkedin {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4facfe;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .member-linkedin:hover {
+            color: #00f2fe;
+            transform: translateY(-1px);
+        }
+
+        /* Insights Section */
+        .insights {
+            padding: 8rem 0;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .insight-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(79, 172, 254, 0.3);
+        }
+
+        .insight-category {
+            background: rgba(79, 172, 254, 0.1);
+            color: #4facfe;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .insight-card h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .insight-card p {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .insight-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .stats-grid {
+        .contact-form {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .stat-item {
+        .contact-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
             padding: 2rem;
+            text-align: center;
         }
 
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #00bcf2;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
             font-size: 1.2rem;
-            opacity: 0.8;
+        }
+
+        .contact-item h3 {
+            color: #4facfe;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item p {
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        .contact-item a {
+            color: #4facfe;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: #00f2fe;
         }
 
         /* Footer */
         footer {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 3rem 0;
-            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 4rem 0 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: #4facfe;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
         }
 
         /* Animations */
@@ -288,75 +723,95 @@
             }
         }
 
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 20px rgba(0, 188, 242, 0.5);
-            }
-            to {
-                text-shadow: 0 0 30px rgba(0, 188, 242, 0.8), 0 0 40px rgba(0, 120, 212, 0.5);
-            }
-        }
-
         @keyframes float {
             0%, 100% {
                 transform: translateY(0px) rotate(0deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-15px) rotate(180deg);
                 opacity: 1;
             }
-            50% {
-                transform: translateY(-20px) rotate(180deg);
-                opacity: 0.8;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
             }
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
             
-            .hero p {
-                font-size: 1.2rem;
+            .hero .subtitle {
+                font-size: 1.1rem;
             }
             
             .nav-links {
                 display: none;
             }
             
-            .features-grid {
+            .about-content,
+            .about-features {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .services-grid,
+            .team-grid,
+            .insights-grid {
                 grid-template-columns: 1fr;
             }
-        }
+            
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-stats {
+                gap: 2rem;
+            }
 
-        /* Glassmorphism effects */
-        .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
 
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
+
+        /* Loading animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">Azure 2030</div>
+        <nav class="container">
+            <div class="logo">AGenius X</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#stats">Analytics</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Solutions</a></li>
+                <li><a href="#team">Leadership</a></li>
+                <li><a href="#insights">Insights</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -364,81 +819,409 @@
 
     <section id="home" class="hero">
         <div class="particles"></div>
-        <div class="hero-content">
-            <h1>The Future is Now</h1>
-            <p>Experience next-generation cloud computing with Azure 2030</p>
-            <a href="#features" class="cta-button">Explore the Future</a>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">AI Transformation Leaders</div>
+                <h1>Future-Proof AI Solutions for Enterprise Excellence</h1>
+                <p class="subtitle">We empower organizations to harness artificial intelligence strategically, delivering measurable ROI through ethical AI implementation, data governance, and digital transformation expertise.</p>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">50+</span>
+                        <span class="hero-stat-label">Enterprise Clients</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">99.9%</span>
+                        <span class="hero-stat-label">AI Model Accuracy</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">75%</span>
+                        <span class="hero-stat-label">Average ROI Increase</span>
+                    </div>
+                </div>
+
+                <div class="cta-group">
+                    <a href="#contact" class="cta-button">Start Your AI Journey</a>
+                    <a href="#services" class="cta-button cta-secondary">Explore Solutions</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="features" class="features">
+    <section id="about" class="about">
         <div class="container">
-            <h2>Future-Ready Features</h2>
-            <div class="features-grid">
-                <div class="feature-card glass">
-                    <div class="feature-icon">🧠</div>
-                    <h3>AI-Powered Infrastructure</h3>
-                    <p>Self-optimizing cloud resources that adapt to your needs in real-time using advanced machine learning algorithms.</p>
+            <div class="section-header">
+                <div class="section-badge">Our Approach</div>
+                <h2 class="section-title">Transforming Business Through Intelligent Innovation</h2>
+                <p class="section-subtitle">AGenius X combines deep technical expertise with strategic consulting excellence, delivering AI solutions that drive measurable business outcomes while maintaining the highest standards of ethics and governance.</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>To democratize artificial intelligence by creating accessible, ethical, and transformative AI solutions that empower businesses to achieve unprecedented levels of innovation and competitive advantage.</p>
+                    
+                    <p>We believe in human-centered AI that enhances decision-making capabilities rather than replacing human judgment, ensuring sustainable growth and responsible innovation.</p>
+
+                    <h3>Why Choose AGenius X</h3>
+                    <p>Our leadership team brings decades of combined experience in AI research, enterprise consulting, and digital transformation. We understand both the technical complexities and business imperatives that drive successful AI adoption.</p>
                 </div>
-                <div class="feature-card glass">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Quantum Security</h3>
-                    <p>Next-generation encryption and security protocols designed to withstand quantum computing threats.</p>
+
+                <div class="about-text">
+                    <h3>Our Vision</h3>
+                    <p>A world where artificial intelligence seamlessly integrates with human intelligence, creating symbiotic relationships that solve complex challenges and enhance quality of life across industries.</p>
+
+                    <p>We're building the foundation for tomorrow's intelligent enterprises, where AI-driven insights and automation enable organizations to focus on strategic innovation and human-centric value creation.</p>
+
+                    <h3>European AI Leadership</h3>
+                    <p>Based in Europe, we bring unique insights into regulatory compliance, data governance, and ethical AI implementation that help organizations navigate complex regulatory landscapes while maximizing AI benefits.</p>
                 </div>
-                <div class="feature-card glass">
+            </div>
+
+            <div class="about-features">
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h4>Ethical AI First</h4>
+                    <p>Responsible AI development with transparent governance frameworks and compliance-ready solutions.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <h4>Data-Driven Results</h4>
+                    <p>ROI-focused implementations with measurable outcomes and continuous optimization strategies.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔧</div>
+                    <h4>Custom Solutions</h4>
+                    <p>Tailored AI architectures designed for your specific industry challenges and business objectives.</p>
+                </div>
+                <div class="feature-item">
                     <div class="feature-icon">🌍</div>
-                    <h3>Global Edge Computing</h3>
-                    <p>Ultra-low latency processing with our worldwide network of intelligent edge nodes.</p>
-                </div>
-                <div class="feature-card glass">
-                    <div class="feature-icon">♻️</div>
-                    <h3>Carbon Negative</h3>
-                    <p>100% renewable energy with carbon capture technology, making your cloud footprint negative.</p>
-                </div>
-                <div class="feature-card glass">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Hyperscale Performance</h3>
-                    <p>Instant scaling capabilities that handle workloads from startup to enterprise in milliseconds.</p>
-                </div>
-                <div class="feature-card glass">
-                    <div class="feature-icon">🔮</div>
-                    <h3>Predictive Analytics</h3>
-                    <p>AI-driven insights that predict and prevent issues before they impact your applications.</p>
+                    <h4>Global Expertise</h4>
+                    <p>European-based team with international experience and deep understanding of diverse markets.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="stats" class="stats">
+    <section id="services" class="services">
         <div class="container">
-            <h2>Powering the Future</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="99.99">0</span>
-                    <div class="stat-label">% Uptime</div>
+            <div class="section-header">
+                <div class="section-badge">Solutions</div>
+                <h2 class="section-title">Enterprise AI Solutions That Deliver</h2>
+                <p class="section-subtitle">From strategy to implementation, we provide comprehensive AI solutions that transform your business operations and unlock new opportunities for growth.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>AI Strategy & Consulting</h3>
+                    <p>Comprehensive AI roadmaps, feasibility studies, and strategic planning to ensure successful AI adoption aligned with your business objectives.</p>
+                    <ul class="service-features">
+                        <li>AI Readiness Assessment</li>
+                        <li>Strategic Roadmap Development</li>
+                        <li>ROI Modeling & Business Cases</li>
+                        <li>Change Management Planning</li>
+                    </ul>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="200">0</span>
-                    <div class="stat-label">Global Regions</div>
+
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>Intelligent Process Automation</h3>
+                    <p>Transform business operations with AI-powered automation that learns, adapts, and optimizes workflows while reducing costs and improving accuracy.</p>
+                    <ul class="service-features">
+                        <li>Process Discovery & Analysis</li>
+                        <li>RPA with AI Enhancement</li>
+                        <li>Document Processing & OCR</li>
+                        <li>Workflow Optimization</li>
+                    </ul>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="1000000">0</span>
-                    <div class="stat-label">Active Users</div>
+
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Predictive Analytics & ML</h3>
+                    <p>Harness machine learning to predict trends, forecast demand, and make data-driven decisions with unprecedented accuracy and confidence.</p>
+                    <ul class="service-features">
+                        <li>Advanced Forecasting Models</li>
+                        <li>Risk Assessment & Management</li>
+                        <li>Customer Behavior Analytics</li>
+                        <li>Real-time Decision Support</li>
+                    </ul>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="5">0</span>
-                    <div class="stat-label">ms Latency</div>
+
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3>Conversational AI & NLP</h3>
+                    <p>Deploy sophisticated chatbots and virtual assistants that understand context, emotion, and intent, providing human-like interactions at scale.</p>
+                    <ul class="service-features">
+                        <li>Intelligent Chatbot Development</li>
+                        <li>Natural Language Processing</li>
+                        <li>Sentiment Analysis</li>
+                        <li>Multi-language Support</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👁️</div>
+                    <h3>Computer Vision Solutions</h3>
+                    <p>Enable machines to see and understand visual content with advanced image recognition, object detection, and visual analysis capabilities.</p>
+                    <ul class="service-features">
+                        <li>Image & Video Analysis</li>
+                        <li>Quality Control Automation</li>
+                        <li>Facial Recognition Systems</li>
+                        <li>Medical Image Processing</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>AI Governance & Ethics</h3>
+                    <p>Implement robust AI governance frameworks ensuring ethical, compliant, and transparent AI systems that meet regulatory requirements.</p>
+                    <ul class="service-features">
+                        <li>AI Governance Frameworks</li>
+                        <li>Regulatory Compliance</li>
+                        <li>Bias Detection & Mitigation</li>
+                        <li>Explainable AI Solutions</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
+    <section id="team" class="team">
         <div class="container">
-            <h3>Ready to Build the Future?</h3>
-            <p>Join thousands of innovators already using Azure 2030</p>
-            <a href="#" class="cta-button" style="margin-top: 1rem;">Get Started Today</a>
-            <p style="margin-top: 2rem; opacity: 0.6;">© 2030 Azure. Building tomorrow's cloud today.</p>
+            <div class="section-header">
+                <div class="section-badge">Leadership</div>
+                <h2 class="section-title">Visionary Leaders Driving AI Innovation</h2>
+                <p class="section-subtitle">Our leadership team combines deep technical expertise with strategic business acumen, bringing decades of experience in AI, consulting, and digital transformation.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">AG</div>
+                    <h3 class="member-name">Adem Güngörmüş</h3>
+                    <div class="member-title">Chief Executive Officer</div>
+                    <div class="member-company">Founder, AGenius</div>
+                    <div class="member-bio">
+                        Visionary leader with extensive experience in data-driven transformation and European market operations. Adem founded AGenius in 2019, building it into a recognized consultancy serving complex business environments. His expertise spans data governance, digital transformation, and strategic business development.
+                    </div>
+                    <div class="member-expertise">
+                        <span class="expertise-tag">Data Governance</span>
+                        <span class="expertise-tag">Digital Strategy</span>
+                        <span class="expertise-tag">Business Transformation</span>
+                        <span class="expertise-tag">European Markets</span>
+                    </div>
+                    <a href="https://www.linkedin.com/in/ademgungormus/" class="member-linkedin" target="_blank">
+                        <span>💼</span> View LinkedIn Profile
+                    </a>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">AB</div>
+                    <h3 class="member-name">Abdullah Biler</h3>
+                    <div class="member-title">Chief Operating Officer</div>
+                    <div class="member-company">Operations Excellence Leader</div>
+                    <div class="member-bio">
+                        Seasoned operations executive with 15+ years of experience scaling technology companies from startup to enterprise. Abdullah specializes in operational efficiency, strategic planning, and building high-performance teams. His expertise in AI product commercialization and process optimization drives AGenius X's operational excellence.
+                    </div>
+                    <div class="member-expertise">
+                        <span class="expertise-tag">Operations Management</span>
+                        <span class="expertise-tag">Strategic Planning</span>
+                        <span class="expertise-tag">Team Leadership</span>
+                        <span class="expertise-tag">Process Optimization</span>
+                    </div>
+                    <a href="https://www.linkedin.com/in/abdullah-biler-8374a0a5/" class="member-linkedin" target="_blank">
+                        <span>💼</span> View LinkedIn Profile
+                    </a>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">SD</div>
+                    <h3 class="member-name">Semih Doksanbir</h3>
+                    <div class="member-title">Chief Technology Officer</div>
+                    <div class="member-company">Co-Founder & Technical Architect</div>
+                    <div class="member-bio">
+                        Distinguished technologist and system architect with expertise in full-stack development and enterprise solutions. Semih co-founded AGenius and brings deep technical expertise in PHP frameworks, custom CMS development, and scalable system architecture. His forward-thinking approach to technology adoption drives our AI infrastructure development.
+                    </div>
+                    <div class="member-expertise">
+                        <span class="expertise-tag">System Architecture</span>
+                        <span class="expertise-tag">Full-Stack Development</span>
+                        <span class="expertise-tag">AI Infrastructure</span>
+                        <span class="expertise-tag">Technical Leadership</span>
+                    </div>
+                    <a href="https://be.linkedin.com/in/semih-doksanbir" class="member-linkedin" target="_blank">
+                        <span>💼</span> View LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="insights" class="insights">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Thought Leadership</div>
+                <h2 class="section-title">AI Insights & Industry Trends</h2>
+                <p class="section-subtitle">Stay ahead of the curve with our latest thinking on AI trends, implementation strategies, and industry developments shaping the future of business.</p>
+            </div>
+
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-category">AI Governance</div>
+                    <h3>Building Responsible AI: Frameworks for Ethical Implementation in 2025</h3>
+                    <p>As AI adoption accelerates, organizations must prioritize ethical implementation and governance frameworks. This comprehensive guide explores best practices for building responsible AI systems that deliver business value while maintaining trust and compliance.</p>
+                    <div class="insight-meta">
+                        <span>Strategic Analysis</span>
+                        <span>8 min read</span>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-category">Business Strategy</div>
+                    <h3>From AI Pilot to Production: Scaling AI Initiatives Successfully</h3>
+                    <p>Many organizations struggle to move beyond AI pilots to full-scale production. Learn the key strategies, common pitfalls, and success factors for scaling AI initiatives across your enterprise.</p>
+                    <div class="insight-meta">
+                        <span>Implementation Guide</span>
+                        <span>12 min read</span>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-category">Technology Trends</div>
+                    <h3>Agentic AI: The Next Frontier in Business Automation</h3>
+                    <p>Explore how agentic AI systems are revolutionizing business processes by operating autonomously and collaboratively. Discover the opportunities and challenges of implementing AI agents in your organization.</p>
+                    <div class="insight-meta">
+                        <span>Technology Deep Dive</span>
+                        <span>10 min read</span>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-category">ROI Analysis</div>
+                    <h3>The ROI of AI: Measuring Success Beyond the Hype</h3>
+                    <p>Cut through the AI hype with practical frameworks for measuring and maximizing AI ROI. Learn how leading organizations are quantifying AI value and building sustainable AI programs.</p>
+                    <div class="insight-meta">
+                        <span>Business Analysis</span>
+                        <span>15 min read</span>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-category">European AI</div>
+                    <h3>Navigating EU AI Regulation: Compliance Strategies for 2025</h3>
+                    <p>The EU AI Act is reshaping how organizations approach AI development and deployment. Get practical guidance on compliance requirements and strategies for maintaining competitive advantage.</p>
+                    <div class="insight-meta">
+                        <span>Regulatory Guide</span>
+                        <span>11 min read</span>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-category">Future Trends</div>
+                    <h3>Multimodal AI: Beyond Text Generation to True Intelligence</h3>
+                    <p>Discover how multimodal AI systems that process text, images, audio, and video simultaneously are creating new possibilities for business innovation and customer experience.</p>
+                    <div class="insight-meta">
+                        <span>Innovation Outlook</span>
+                        <span>9 min read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Get Started</div>
+                <h2 class="section-title">Ready to Transform Your Business with AI?</h2>
+                <p class="section-subtitle">Let's explore how AGenius X can help you harness the power of artificial intelligence to drive innovation, improve efficiency, and achieve sustainable competitive advantage.</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3 style="color: #4facfe; margin-bottom: 2rem; font-size: 1.5rem;">Start Your AI Journey Today</h3>
+                    <p style="margin-bottom: 2rem; color: #94a3b8;">Schedule a strategic consultation to discuss your AI needs, challenges, and opportunities. Our experts will provide personalized recommendations for your digital transformation journey.</p>
+                    <div class="cta-group">
+                        <a href="mailto:info@ageniusx.com" class="cta-button">Schedule Consultation</a>
+                        <a href="mailto:info@ageniusx.com" class="cta-button cta-secondary">Request Proposal</a>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <h3>Get In Touch</h3>
+                        <p>Ready to start your AI transformation?</p>
+                        <p><a href="mailto:info@ageniusx.com">info@ageniusx.com</a></p>
+                        <p>We respond to all inquiries within 24 hours.</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🤝</div>
+                        <h3>Strategic Partnerships</h3>
+                        <p>Interested in strategic partnerships or collaboration opportunities?</p>
+                        <p>Let's explore how we can work together to drive AI innovation.</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">💼</div>
+                        <h3>Join Our Team</h3>
+                        <p>We're always looking for exceptional talent who share our passion for ethical AI development.</p>
+                        <p>Be part of shaping the future of AI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AGenius X</h3>
+                    <p>Future-proof AI solutions for enterprise excellence. We empower organizations to harness artificial intelligence strategically, delivering measurable ROI through ethical implementation and expert guidance.</p>
+                    <p style="margin-top: 1rem;"><strong>Email:</strong> <a href="mailto:info@ageniusx.com">info@ageniusx.com</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Solutions</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">AI Strategy & Consulting</a></li>
+                        <li><a href="#services">Process Automation</a></li>
+                        <li><a href="#services">Predictive Analytics</a></li>
+                        <li><a href="#services">Conversational AI</a></li>
+                        <li><a href="#services">Computer Vision</a></li>
+                        <li><a href="#services">AI Governance</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#insights">AI Insights</a></li>
+                        <li><a href="#insights">Industry Reports</a></li>
+                        <li><a href="#insights">Best Practices</a></li>
+                        <li><a href="#insights">Case Studies</a></li>
+                        <li><a href="#insights">Whitepapers</a></li>
+                        <li><a href="#team">Leadership Team</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">Partnerships</a></li>
+                        <li><a href="#contact">Careers</a></li>
+                        <li><a href="mailto:info@ageniusx.com">Media Inquiries</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 AGenius X. All rights reserved. | Building tomorrow's intelligence today | <a href="mailto:info@ageniusx.com">info@ageniusx.com</a></p>
+            </div>
         </div>
     </footer>
 
@@ -446,53 +1229,32 @@
         // Animated particles
         function createParticles() {
             const particles = document.querySelector('.particles');
-            const particleCount = 50;
+            const particleCount = 80;
 
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
                 particles.appendChild(particle);
             }
         }
 
-        // Animated counters
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                const increment = target / 100;
-                let current = 0;
-                
-                const updateCounter = () => {
-                    if (current < target) {
-                        current += increment;
-                        if (target >= 1000000) {
-                            counter.textContent = (current / 1000000).toFixed(1) + 'M';
-                        } else if (target >= 1000) {
-                            counter.textContent = (current / 1000).toFixed(1) + 'K';
-                        } else {
-                            counter.textContent = Math.ceil(current);
-                        }
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        if (target >= 1000000) {
-                            counter.textContent = (target / 1000000).toFixed(1) + 'M';
-                        } else if (target >= 1000) {
-                            counter.textContent = (target / 1000).toFixed(1) + 'K';
-                        } else {
-                            counter.textContent = target;
-                        }
-                    }
-                };
-                
-                updateCounter();
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
-        }
+        }, observerOptions);
 
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -512,196 +1274,87 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(0, 0, 0, 0.95)';
+                header.style.background = 'rgba(15, 20, 25, 0.98)';
             } else {
-                header.style.background = 'rgba(0, 0, 0, 0.9)';
+                header.style.background = 'rgba(15, 20, 25, 0.95)';
             }
         });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    
-                    if (entry.target.classList.contains('stats')) {
-                        animateCounters();
+        // Animated counters for hero stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.hero-stat-number');
+            
+            counters.forEach(counter => {
+                const text = counter.textContent;
+                const target = parseFloat(text);
+                const suffix = text.replace(/[0-9.]/g, '');
+                let current = 0;
+                const increment = target / 60;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        if (suffix === '%') {
+                            counter.textContent = Math.min(current, target).toFixed(1) + '%';
+                        } else if (suffix === '+') {
+                            counter.textContent = Math.ceil(Math.min(current, target)) + '+';
+                        } else {
+                            counter.textContent = Math.ceil(Math.min(current, target));
+                        }
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = text;
                     }
-                }
+                };
+                
+                updateCounter();
             });
-        }, observerOptions);
+        }
 
-        // Observe elements for animation
-        document.querySelectorAll('.feature-card, .stats').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-
-        // Initialize
+        // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             createParticles();
+            
+            // Add fade-in class to elements
+            document.querySelectorAll('.service-card, .team-member, .insight-card, .feature-item, .contact-item').forEach(el => {
+                el.classList.add('fade-in');
+                observer.observe(el);
+            });
+
+            // Trigger counter animation when hero stats come into view
+            const heroStats = document.querySelector('.hero-stats');
+            if (heroStats) {
+                const statsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCounters();
+                            statsObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                statsObserver.observe(heroStats);
+            }
         });
 
-        // Add some interactivity
-        document.querySelectorAll('.feature-card').forEach(card => {
+        // Add hover effects to interactive elements
+        document.querySelectorAll('.service-card, .team-member, .insight-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-10px) scale(1.02)';
+                card.style.transform = 'translateY(-8px)';
             });
             
             card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) scale(1)';
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Email click tracking (optional analytics)
+        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                // Optional: Add analytics tracking here
+                console.log('Email contact initiated');
             });
         });
     </script>
 </body>
 </html>
-```
-
-## File 2: staticwebapp.config.json
-```json
-{
-  "routes": [
-    {
-      "route": "/*",
-      "headers": {
-        "cache-control": "must-revalidate, max-age=31536000",
-        "X-Content-Type-Options": "nosniff",
-        "X-Frame-Options": "DENY",
-        "X-XSS-Protection": "1; mode=block",
-        "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
-        "Content-Security-Policy": "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https:; img-src 'self' data: https:; font-src 'self' data: https:;"
-      }
-    }
-  ],
-  "navigationFallback": {
-    "rewrite": "/index.html"
-  },
-  "globalHeaders": {
-    "X-UA-Compatible": "IE=edge",
-    "X-Powered-By": "Azure Static Web Apps"
-  },
-  "mimeTypes": {
-    ".json": "application/json",
-    ".js": "application/javascript",
-    ".css": "text/css",
-    ".html": "text/html"
-  }
-}
-```
-
-## File 3: README.md
-```markdown
-# Azure 2030 - Future Ready Website
-
-A cutting-edge, future-ready website showcasing the possibilities of Azure cloud computing in 2030.
-
-## 🚀 Features
-
-- **Modern Design**: Glassmorphism UI with dynamic animations
-- **Responsive**: Works perfectly on all devices
-- **Performance Optimized**: Fast loading with Azure CDN
-- **Security Headers**: Enterprise-grade security configuration
-- **Auto-Deploy**: GitHub Actions integration
-
-## 🌐 Live Demo
-
-Visit: [https://company.ageniusx.com](https://company.ageniusx.com)
-
-## 🛠️ Technologies
-
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Hosting**: Azure Static Web Apps
-- **CDN**: Azure CDN
-- **CI/CD**: GitHub Actions
-- **Security**: Custom headers and HTTPS
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## 🔧 Development
-
-1. Clone the repository
-2. Open `index.html` in your browser
-3. Make changes and commit
-4. GitHub Actions will auto-deploy
-
-## 📊 Performance
-
-- **Lighthouse Score**: 95+
-- **Load Time**: < 2 seconds
-- **Uptime**: 99.99%
-- **Global CDN**: Ultra-low latency
-
-## 🔒 Security
-
-- HTTPS enforcement
-- Security headers
-- Content Security Policy
-- XSS protection
-
-## 📄 License
-
-MIT License - feel free to use for your projects!
-```
-
-## File 4: .gitignore
-```
-# Dependencies
-node_modules/
-npm-debug.log*
-
-# Build outputs
-dist/
-build/
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Logs
-logs
-*.log
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Coverage directory used by tools like istanbul
-coverage/
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Azure
-local.settings.json
-```
